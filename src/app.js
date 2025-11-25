@@ -5,9 +5,12 @@ require("dotenv").config();
 
 const app = express();
 
+const authRoutes = require("./routes/authRoutes");
+
 // Middlewares
 app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Test route
 app.get("/", (req, res) => {
@@ -24,6 +27,9 @@ sequelize
   .sync({ alter: true })
   .then(() => console.log("📦 Modèles synchronisés avec PostgreSQL"))
   .catch((err) => console.log(err));
+
+// Routes
+app.use("/api/auth", authRoutes);
 
 // Start server
 const PORT = process.env.PORT || 5000;
