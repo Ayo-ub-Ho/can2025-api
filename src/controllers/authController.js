@@ -91,6 +91,7 @@ module.exports = {
           username: user.username,
           email: user.email,
           role: user.role,
+          password: user.password,
         },
       });
     } catch (error) {

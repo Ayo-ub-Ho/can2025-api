@@ -1,5 +1,3 @@
-// routes/teamRoutes.js
-
 const express = require("express");
 const router = express.Router();
 
@@ -7,7 +5,7 @@ const router = express.Router();
 //const auth = require("../middleware/auth");
 const auth = require("../middlewares/authMiddleware");
 
-const adminOnly = require("../middlewares/admin");
+// const adminOnly = require("../middlewares/admin");
 
 // Controllers
 const {
@@ -23,7 +21,7 @@ const {
 // -------------------------------------------
 
 // Create Team (Admin Only) - POST /api/teams
-router.post("/teams", auth, adminOnly, createTeam);
+router.post("/teams", auth, createTeam);
 
 // Get All Teams - GET /api/teams
 router.get("/teams", getAllTeams);
@@ -32,9 +30,9 @@ router.get("/teams", getAllTeams);
 router.get("/teams/:id", getTeamById);
 
 // Update Team (Admin Only) - PUT /api/teams/:id
-router.put("/teams/:id", auth, adminOnly, updateTeam);
+router.put("/teams/:id", auth, updateTeam);
 
 // Delete Team (Admin Only) - DELETE /api/teams/:id
-router.delete("/teams/:id", auth, adminOnly, deleteTeam);
+router.delete("/teams/:id", auth, deleteTeam);
 
 module.exports = router;
