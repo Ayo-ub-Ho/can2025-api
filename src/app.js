@@ -34,9 +34,19 @@ sequelize
 app.use("/api/auth", authRoutes);
 app.use("/api/matches", matchRoutes);
 
+const teamRoutes = require("./routes/teamRoutes");
+
+//app.use(express.json());
+
+app.use("/api", teamRoutes); // prefix
+
 // Start server
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
   console.log(`🚀 Serveur lancé sur le port ${PORT}`);
 });
+
+
+
+
