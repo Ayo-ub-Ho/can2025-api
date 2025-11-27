@@ -32,11 +32,11 @@ sequelize
 app.use("/api/auth", authRoutes);
 
 const teamRoutes = require("./routes/teamRoutes");
-
+const playerRouter = require("./routes/playerRoutes");
 //app.use(express.json());
 
 app.use("/api", teamRoutes); // prefix
-
+app.use("/api", playerRouter);
 // Start server
 const PORT = process.env.PORT || 5000;
 
