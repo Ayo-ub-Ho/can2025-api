@@ -1,4 +1,3 @@
-// src/controllers/matchController.js
 const { Op } = require('sequelize');
 const Match = require('../models/Match');
 const Team = require('../models/Team');
