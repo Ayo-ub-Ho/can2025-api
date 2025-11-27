@@ -25,7 +25,7 @@ require("./models/index");
 // Sync DB
 sequelize
   .sync({ alter: true })
-  .then(() => console.log("📦 Modèles synchronisés avec PostgreSQL"))
+  .then(() => console.log(" Modèles synchronisés avec PostgreSQL"))
   .catch((err) => console.log(err));
 
 // Routes
@@ -41,9 +41,5 @@ app.use("/api", teamRoutes); // prefix
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-  console.log(`🚀 Serveur lancé sur le port ${PORT}`);
+  console.log(` Serveur lancé sur le port http://localhost:${PORT}`);
 });
-
-
-
-
