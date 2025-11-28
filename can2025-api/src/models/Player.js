@@ -33,7 +33,6 @@ const Player = sequelize.define(
 
     team_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       references: { model: "teams", key: "id" },
       onDelete: "CASCADE",
     },

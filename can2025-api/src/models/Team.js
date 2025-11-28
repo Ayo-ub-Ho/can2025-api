@@ -1,9 +1,8 @@
 const { DataTypes } = require("sequelize");
 const { sequelize } = require("../config/database");
-const Team = require("./Team");
 
-const Player = sequelize.define(
-  "Player",
+const Team = sequelize.define(
+  "Team",
   {
     id: {
       type: DataTypes.INTEGER,
@@ -14,34 +13,31 @@ const Player = sequelize.define(
     name: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true,
     },
 
-    position: {
+    country: {
       type: DataTypes.STRING,
       allowNull: false,
     },
 
-    number: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
+    flag_url: {
+      type: DataTypes.STRING,
     },
 
-    age: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
+    coach: {
+      type: DataTypes.STRING,
     },
 
-    team_id: {
-      type: DataTypes.INTEGER,
+    group: {
+      type: DataTypes.STRING, // ex: "A", "B", "C"
       allowNull: false,
-      references: { model: "teams", key: "id" },
-      onDelete: "CASCADE",
     },
   },
   {
-    tableName: "players",
+    tableName: "teams",
     timestamps: true,
   }
 );
 
-module.exports = Player;
+module.exports = Team;
