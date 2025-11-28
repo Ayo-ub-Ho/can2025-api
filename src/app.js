@@ -1,3 +1,4 @@
+const matchRoutes = require("./routes/matchRoutes");
 const express = require("express");
 const cors = require("cors");
 const { connectDB, sequelize } = require("./config/database");
@@ -36,9 +37,11 @@ const playerRouter = require("./routes/playerRoutes");
 //app.use(express.json());
 
 app.use("/api", teamRoutes); // prefix
-app.use("/api", playerRouter);
+app.use("/api/matches", matchRoutes);
+
 // Start server
 const PORT = process.env.PORT || 5000;
+
 
 app.listen(PORT, () => {
   console.log(`🚀 Serveur lancé sur le port ${PORT}`);
