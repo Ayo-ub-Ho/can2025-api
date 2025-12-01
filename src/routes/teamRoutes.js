@@ -1,12 +1,8 @@
-// routes/teamRoutes.js
-
 const express = require("express");
 const router = express.Router();
 
 // Middlewares
-//const auth = require("../middleware/auth");
 const auth = require("../middlewares/authMiddleware");
-
 
 // Controllers
 const {
